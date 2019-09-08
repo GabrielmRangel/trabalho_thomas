@@ -1,12 +1,14 @@
 //Nome: Gabriel Mendes Rangel
 //Curso: 2° Semestre TADS
 
-//Biblioteca padrão de entrada e saída
+//Biblioteca padrão de entrada e saída de informações
 #include <stdio.h>
 //Biblioteca padrão de condicionais
 #include <stdbool.h>
 //Biblioteca de idiomas
 #include <locale.h>
+#include <stdlib.h>
+#include <conio.h>
 
 //Programa principal
 int main()
@@ -15,37 +17,98 @@ int main()
 	setlocale(LC_ALL, "Portuguese");
 	
 	//Declaração de variaveis
-	//Nota do 1° bimestre
-	float notab1;
-	//Nota do 2° bimestre
-	float notab2;
-	//Nome do aluno
-	char nome[255];
 	//Resposta para menu
-	int resposta;
-	//Média da nota
-	float media;
+	int opcao;
+	//Nome e sobrenome do aluno
+	char nome[10], sobrenome[20];
+	//Nota do B1, B2 e Média
+	float notab1, notab2, media;
+	//Respota para sair
+	char resposta;
 	
-	//Titulo do menu
-	printf("----------------------\n");
-	printf("   NOTAS DOS ALUNOS   \n");
-	printf("----------------------\n");
-	//Opções
-	printf("[1] Cadastrar um aluno \n");
-	printf("[2] Fechar as médias \n");
-	printf("[3] Finalizar programa \n");
-	printf("Escolha uma opção: \n");
-	//Entrada de Opção
-	scanf("%d", &resposta);
-	
-	//Escolha de opção
-	switch (resposta)
-	{
-		//Caso escolha 1
-		case 1:
+	do
+	{	
+		//Titulo do menu
+		printf("----------------------\n");
+		printf("   NOTAS DOS ALUNOS   \n");
+		printf("----------------------\n");
+		
+		//Opções
+		printf("[1] Cadastrar o aluno \n");
+		printf("[2] Limpar Tela \n");
+		printf("[3] Finalizar programa \n");
+		printf("Escolha uma opção: ");
+		//Entrada de Opção
+		scanf("%d", &opcao);
+		
+		//Escolha de opção
+		switch (opcao)
 		{
-			printf("Insira o nome do aluno: ");
-			scanf("%c", &nome);
-		}		
-	}
+			//Outra opção
+			default:
+			{
+				printf("\nOpção invalida!\n");
+				
+				//Termina a escolha
+				break;	
+			}
+			
+			//Caso escolha 1
+			case 1:
+			{
+				printf("----------------------\n");
+				//Inserir o nome
+				printf("Insira o primeiro nome do aluno: ");
+				scanf("%s", nome);
+				
+				//Inserir o sobrenome
+				printf("Insira o segundo nome do aluno: ");
+				scanf("%s", sobrenome);
+				
+				//Inserir a nota do primeiro bimestre
+				printf("Digite a nota do 1o bimestre: ");
+				scanf("%f", &notab1);
+				
+				//Inserir a nota do segundo bimestre 
+				printf("Digite a nota do 2o bimestre: ");
+				scanf("%f", &notab2);
+				
+				//Calculo da média
+				media = (notab1 + notab2) / 2;
+				
+				//Exibir informações dos alunos
+				printf("----------------------\n");
+				printf("Nome do aluno: %s %s\n", nome, sobrenome);
+				printf("Nota B1: %.2f\n", notab1);
+				printf("Nota B2: %.2f\n", notab2);
+				printf("Média: %.2f\n", media);
+				
+				//Termina a escolha
+				break;	
+			}
+			
+			//Caso escolha 2
+			case 2:
+			{
+				//Limpa a tela
+				system("cls");
+				
+				//Termina a escolha
+				break;			
+			}
+			
+			//Caso escolha 3
+			case 3:
+			{
+				//printf("Tem certeza? [s/n] ");
+				//scanf("%c", resposta);
+				
+				printf("\nFinalizando o programa!");
+				
+				//Termina a escolha
+				break;	
+			}
+						
+		}
+	} while (resposta != 3);
 }
