@@ -7,7 +7,9 @@
 #include <stdbool.h>
 //Biblioteca de idiomas
 #include <locale.h>
+//Alocação de memória, controle de processos e conversões
 #include <stdlib.h>
+//Manipulação de caracteres
 #include <conio.h>
 
 //Programa principal
@@ -20,7 +22,7 @@ int main()
 	//Resposta para menu
 	int opcao;
 	//Nome e sobrenome do aluno
-	char nome[10], sobrenome[20];
+	char nome[20], sobrenome[20];
 	//Nota do B1, B2 e Média
 	float notab1, notab2, media;
 	
@@ -99,7 +101,7 @@ int main()
 				//printf("Tem certeza? [s/n] ");
 				//scanf("%c", resposta);
 				
-				printf("\nFinalizando o programa!");
+				printf("\nFinalizando o programa!\n");
 				
 				//Termina a escolha
 				break;	
