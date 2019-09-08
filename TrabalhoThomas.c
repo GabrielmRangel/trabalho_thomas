@@ -27,9 +27,9 @@ int main()
 	float media;
 	
 	//Titulo do menu
-	printf("----------------------------------------\n");
+	printf("----------------------\n");
 	printf("   NOTAS DOS ALUNOS   \n");
-	printf("----------------------------------------\n");
+	printf("----------------------\n");
 	//Opções
 	printf("[1] Cadastrar um aluno \n");
 	printf("[2] Fechar as médias \n");
