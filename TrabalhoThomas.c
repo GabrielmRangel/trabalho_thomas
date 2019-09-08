@@ -23,14 +23,17 @@ int main()
 	char nome[10], sobrenome[20];
 	//Nota do B1, B2 e Média
 	float notab1, notab2, media;
-	//Respota para sair
-	char resposta;
 	
+	//Desenvolvendo...
+	//Resposta para sair
+	//char resposta;
+	
+	//Repetição
 	do
 	{	
 		//Titulo do menu
 		printf("----------------------\n");
-		printf("   NOTAS DOS ALUNOS   \n");
+		printf("   NOTA DOS ALUNOS   \n");
 		printf("----------------------\n");
 		
 		//Opções
@@ -44,14 +47,6 @@ int main()
 		//Escolha de opção
 		switch (opcao)
 		{
-			//Outra opção
-			default:
-			{
-				printf("\nOpção invalida!\n");
-				
-				//Termina a escolha
-				break;	
-			}
 			
 			//Caso escolha 1
 			case 1:
@@ -79,9 +74,9 @@ int main()
 				//Exibir informações dos alunos
 				printf("----------------------\n");
 				printf("Nome do aluno: %s %s\n", nome, sobrenome);
-				printf("Nota B1: %.2f\n", notab1);
-				printf("Nota B2: %.2f\n", notab2);
-				printf("Média: %.2f\n", media);
+				printf("Nota B1: %.1f\n", notab1);
+				printf("Nota B2: %.1f\n", notab2);
+				printf("Média: %.1f\n", media);
 				
 				//Termina a escolha
 				break;	
@@ -100,6 +95,7 @@ int main()
 			//Caso escolha 3
 			case 3:
 			{
+				//DESENVOLVIMENTO...
 				//printf("Tem certeza? [s/n] ");
 				//scanf("%c", resposta);
 				
@@ -108,7 +104,15 @@ int main()
 				//Termina a escolha
 				break;	
 			}
-						
-		}
-	} while (resposta != 3);
+			
+			//Outra opção
+			default:
+			{
+				printf("\nOpção invalida!\n");
+				
+				//Termina a escolha
+				break;	
+			}			
+		}	
+	} while (opcao != 3);
 }
