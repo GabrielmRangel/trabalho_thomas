@@ -19,12 +19,10 @@ int main()
 	setlocale(LC_ALL, "Portuguese");
 	
 	//Declaração de variaveis
-	//Resposta para menu
-	int opcao;
+	//Resposta para menu, nota do B1, B2, atividades e nota final
+	int opcao, notab1, notab2, atividades, nota_final;
 	//Nome e sobrenome do aluno
 	char nome[20], sobrenome[20];
-	//Nota do B1, B2 e Média
-	float notab1, notab2, media;
 	
 	//Desenvolvendo...
 	//Resposta para sair
@@ -56,29 +54,74 @@ int main()
 				printf("----------------------\n");
 				//Inserir o nome
 				printf("Insira o primeiro nome do aluno: ");
-				scanf("%s", nome);
+				scanf("%s", &nome);
 				
 				//Inserir o sobrenome
 				printf("Insira o segundo nome do aluno: ");
-				scanf("%s", sobrenome);
+				scanf("%s", &sobrenome);
 				
-				//Inserir a nota do primeiro bimestre
-				printf("Digite a nota do 1o bimestre: ");
-				scanf("%f", &notab1);
+				//Inserir a nota da primeira prova
+				printf("Digite a nota da 1a prova (Max. 1000): ");
+				scanf("%d", &notab1);
 				
-				//Inserir a nota do segundo bimestre 
-				printf("Digite a nota do 2o bimestre: ");
-				scanf("%f", &notab2);
+				//Validar se é maior que 1000
+				if (notab1 > 1000)
+				{
+					printf("\nNumero acima de 1000 inválido para prova 1! \n");
+					
+					//Termina a escolha
+					break;	
+				}
 				
-				//Calculo da média
-				media = (notab1 + notab2) / 2;
+				//Inserir a nota da segunda prova 
+				printf("Digite a nota da 2a prova (Max. 4000): ");
+				scanf("%d", &notab2);
+				
+				//Validar se é maior que 4000
+				if (notab2 > 4000)
+				{
+					printf("\nNumero acima de 4000 inválido para prova 2! \n");
+					
+					//Termina a escolha
+					break;	
+				}
+				
+				//Inserir a nota das atividades 
+				printf("Digite a nota das atividades: ");
+				scanf("%d", &atividades);
+				
+				//Calculo da nota final
+				nota_final = notab1 + notab2 + atividades;
 				
 				//Exibir informações dos alunos
 				printf("----------------------\n");
 				printf("Nome do aluno: %s %s\n", nome, sobrenome);
-				printf("Nota B1: %.1f\n", notab1);
-				printf("Nota B2: %.1f\n", notab2);
-				printf("Média: %.1f\n", media);
+				printf("Nota final: %.d\n", nota_final);
+				printf("1o critério de aprovação: 1500 \n");
+				printf("2o critério de aprovação: 6000 \n");
+				
+				//Condicional de aprovação
+				if (nota_final >= 6000)
+				{
+					printf("1o critério aprovado! \n");
+					printf("2o critério aprovado! \n");
+					printf("Situação final: Aprovado! \n");
+				}
+				else
+				{
+					if (nota_final >= 1500)
+					{
+						printf("1o critério aprovado! \n");
+						printf("2o critério reprovado! \n");
+						printf("Situação final: Recuperação! \n");	
+					}
+					else
+					{
+						printf("1o critério reprovado! \n");
+						printf("2o critério reprovado! \n");
+						printf("Situação final: Reprovado! \n");		
+					}
+				}
 				
 				//Termina a escolha
 				break;	
