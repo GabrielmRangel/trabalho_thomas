@@ -1,4 +1,8 @@
 //Nome: Gabriel Mendes Rangel
+//Nome: Laysla A. Ap. Alves Cardoso
+//Nome: Daniel Dantas da Silva
+//Nome: Vitor Silva Freitas
+//Nome: Cauã Camargo Godoy
 //Curso: 2° Semestre TADS
 
 //Biblioteca padrão de entrada e saída de informações
@@ -19,21 +23,19 @@ int main()
 	setlocale(LC_ALL, "Portuguese");
 	
 	//Declaração de variaveis
-	//Resposta para menu, nota do B1, B2, atividades e nota final
-	int opcao, notab1, notab2, atividades, nota_final;
-	//Nome e sobrenome do aluno
-	char nome[20], sobrenome[20];
-	
-	//Desenvolvendo...
+	//Resposta para menu e notas
+	int opcao, notab1, notab2, nota_final, atividades_aula_b1, atividades_aula_b2, atividades_transversal, atividades_virtual;
+	//Nome do aluno
+	char nome[20];
 	//Resposta para sair
-	//char resposta;
+	char resposta;
 	
 	//Repetição
 	do
 	{	
 		//Titulo do menu
 		printf("----------------------\n");
-		printf("   NOTA DOS ALUNOS   \n");
+		printf("   CÁLCULO DA NOTA    \n");
 		printf("----------------------\n");
 		
 		//Opções
@@ -56,69 +58,116 @@ int main()
 				printf("Insira o primeiro nome do aluno: ");
 				scanf("%s", &nome);
 				
-				//Inserir o sobrenome
-				printf("Insira o segundo nome do aluno: ");
-				scanf("%s", &sobrenome);
-				
-				//Inserir a nota da primeira prova
-				printf("Digite a nota da 1a prova (Max. 1000): ");
-				scanf("%d", &notab1);
-				
-				//Validar se é maior que 1000
-				if (notab1 > 1000)
+				//Loop de validação
+				do
 				{
-					printf("\nNumero acima de 1000 inválido para prova 1! \n");
-					
-					//Termina a escolha
-					break;	
-				}
+					//Inserir a nota da primeira prova
+					printf("Digite a nota da 1a prova (Max. 1000): ");
+					scanf("%d", &notab1);
+			
+					//Validar se é maior que 1000
+					if (notab1 > 1000)
+					{	
+						printf("\nNota acima de 1000 inválida para prova 1!\n\n");	
+					}	
+				} while (notab1 > 1000);
 				
-				//Inserir a nota da segunda prova 
-				printf("Digite a nota da 2a prova (Max. 4000): ");
-				scanf("%d", &notab2);
-				
-				//Validar se é maior que 4000
-				if (notab2 > 4000)
+				//Loop de validação
+				do
 				{
-					printf("\nNumero acima de 4000 inválido para prova 2! \n");
-					
-					//Termina a escolha
-					break;	
-				}
+					//Inserir a nota da segunda prova 
+					printf("Digite a nota da 2a prova (Max. 4000): ");
+					scanf("%d", &notab2);
+			
+					//Validar se é maior que 4000
+					if (notab2 > 4000)
+					{
+						printf("\nNota acima de 4000 inválida para prova 2! \n\n");	
+					}
+				} while (notab2 > 4000);
 				
-				//Inserir a nota das atividades 
-				printf("Digite a nota das atividades: ");
-				scanf("%d", &atividades);
+				//Loop de validação
+				do
+				{
+					//Inserir a nota da atividade em sala B1
+					printf("Digite a nota da atividade em sala do B1 (Max. 1000): ");
+					scanf("%d", &atividades_aula_b1);
+			
+					//Validar se é maior que 1000
+					if (atividades_aula_b1 > 1000)
+					{
+						printf("\nNota acima de 1000 inválida para atividade em sala do B1! \n\n");
+					}
+				} while (atividades_aula_b1 > 1000);
+				
+				//Loop de validação
+				do
+				{
+					//Inserir a nota da atividade em sala B2
+					printf("Digite a nota da atividade em sala do B2 (Max. 1500): ");
+					scanf("%d", &atividades_aula_b2);
+			
+					//Validar se é maior que 1500
+					if (atividades_aula_b2 > 1500)
+					{
+						printf("\nNota acima de 1500 inválida para atividade em sala do B2! \n\n");
+					}
+				} while (atividades_aula_b2 > 1500);
+				
+				//Loop de validação
+				do
+				{
+					//Inserir a nota da atividade transversal
+					printf("Digite a nota da atividade transversal (Max. 3500): ");
+					scanf("%d", &atividades_transversal);
+			
+					//Validar se é maior que 3500
+					if (atividades_transversal > 3500)
+					{	
+						printf("\nNota acima de 3500 inválida para atividade transversal! \n\n");
+					}
+				} while (atividades_transversal > 3500);
+				
+				//Loop de validação
+				do
+				{
+					//Inserir a nota da atividade virtual
+					printf("Digite a nota da atividade virtual (Max. 3000): ");
+					scanf("%d", &atividades_virtual);
+			
+					//Validar se é maior que 3000
+					if (atividades_virtual > 3000)
+					{
+						printf("\nNota acima de 3000 inválida para atividade virtual! \n\n");
+					}
+				} while (atividades_virtual > 3000);
 				
 				//Calculo da nota final
-				nota_final = notab1 + notab2 + atividades;
+				nota_final = notab1 + notab2 + atividades_aula_b1 + atividades_aula_b2, atividades_transversal, atividades_virtual;
 				
 				//Exibir informações dos alunos
 				printf("----------------------\n");
-				printf("Nome do aluno: %s %s\n", nome, sobrenome);
-				printf("Nota final: %.d\n", nota_final);
+				printf("Nome do aluno: %s\n", nome);
+				printf("Nota final: %d\n", nota_final);
 				printf("1o critério de aprovação: 1500 \n");
 				printf("2o critério de aprovação: 6000 \n");
 				
 				//Condicional de aprovação
 				if (nota_final >= 6000)
 				{
-					printf("1o critério aprovado! \n");
-					printf("2o critério aprovado! \n");
+					//Aprovado
 					printf("Situação final: Aprovado! \n");
 				}
 				else
 				{
 					if (nota_final >= 1500)
 					{
-						printf("1o critério aprovado! \n");
-						printf("2o critério reprovado! \n");
+						//Recuperação
 						printf("Situação final: Recuperação! \n");	
 					}
 					else
 					{
-						printf("1o critério reprovado! \n");
-						printf("2o critério reprovado! \n");
+						//Reprovado
 						printf("Situação final: Reprovado! \n");		
 					}
 				}
@@ -140,20 +189,28 @@ int main()
 			//Caso escolha 3
 			case 3:
 			{
-				//DESENVOLVIMENTO...
-				//printf("Tem certeza? [s/n] ");
-				//scanf("%c", resposta);
+				//Pergunta se quer finalizar
+				printf("\nTem certeza? [s/n] ");
+				scanf("%s", &resposta);
 				
-				printf("\nFinalizando o programa!\n");
+				//Codicional para finalizar ou não
+				if (resposta == 's' || resposta == 'S')
+				{
+					printf("\nFinalizando o programa!");
+				}
+				else
+				{
+					opcao = 0;
+				}
 				
 				//Termina a escolha
-				break;	
+				break;		
 			}
 			
 			//Outra opção
 			default:
 			{
-				printf("\nOpção invalida!\n");
+				printf("\nOpção invalida!\n\n");
 				
 				//Termina a escolha
 				break;	
