@@ -1,19 +1,14 @@
-//Nome: Gabriel Mendes Rangel
-//Nome: Laysla A. Ap. Alves Cardoso
-//Nome: Daniel Dantas da Silva
-//Nome: Vitor Silva Freitas
-//Nome: Cau„ Camargo Godoy
-//Curso: 2∞ Semestre TADS
+//Curso: 2¬∞ Semestre TADS
 
-//Biblioteca padr„o de entrada e saÌda de informaÁıes
+//Biblioteca padr√£o de entrada e sa√≠da de informa√ß√µes
 #include <stdio.h>
-//Biblioteca padr„o de condicionais
+//Biblioteca padr√£o de condicionais
 #include <stdbool.h>
 //Biblioteca de idiomas
 #include <locale.h>
-//AlocaÁ„o de memÛria, controle de processos e conversıes
+//Aloca√ß√£o de mem√≥ria, controle de processos e convers√µes
 #include <stdlib.h>
-//ManipulaÁ„o de caracteres
+//Manipula√ß√£o de caracteres
 #include <conio.h>
 
 //Programa principal
@@ -22,7 +17,7 @@ int main()
 	//Definir o idioma do programa para PT-BR
 	setlocale(LC_ALL, "Portuguese");
 	
-	//DeclaraÁ„o de variaveis
+	//Declara√ß√£o de variaveis
 	//Resposta para menu e notas
 	int opcao, notab1, notab2, nota_final, atividades_aula_b1, atividades_aula_b2, atividades_transversal, atividades_virtual;
 	//Nome do aluno
@@ -30,23 +25,23 @@ int main()
 	//Resposta para sair
 	char resposta;
 	
-	//RepetiÁ„o
+	//Repeti√ß√£o
 	do
 	{	
 		//Titulo do menu
 		printf("----------------------\n");
-		printf("   C¡LCULO DA NOTA    \n");
+		printf("   C√ÅLCULO DA NOTA    \n");
 		printf("----------------------\n");
 		
-		//OpÁıes
+		//Op√ß√µes
 		printf("[1] Cadastrar o aluno \n");
 		printf("[2] Limpar Tela \n");
 		printf("[3] Finalizar programa \n");
-		printf("Escolha uma opÁ„o: ");
-		//Entrada de OpÁ„o
+		printf("Escolha uma op√ß√£o: ");
+		//Entrada de Op√ß√£o
 		scanf("%d", &opcao);
 		
-		//Escolha de opÁ„o
+		//Escolha de op√ß√£o
 		switch (opcao)
 		{
 			
@@ -58,117 +53,117 @@ int main()
 				printf("Insira o primeiro nome do aluno: ");
 				scanf("%s", &nome);
 				
-				//Loop de validaÁ„o
+				//Loop de valida√ß√£o
 				do
 				{
 					//Inserir a nota da primeira prova
 					printf("Digite a nota da 1a prova (Max. 1000): ");
 					scanf("%d", &notab1);
 			
-					//Validar se È maior que 1000
+					//Validar se √© maior que 1000
 					if (notab1 > 1000)
 					{	
-						printf("\nNota acima de 1000 inv·lida para prova 1!\n\n");	
+						printf("\nNota acima de 1000 inv√°lida para prova 1!\n\n");	
 					}	
 				} while (notab1 > 1000);
 				
-				//Loop de validaÁ„o
+				//Loop de valida√ß√£o
 				do
 				{
 					//Inserir a nota da segunda prova 
 					printf("Digite a nota da 2a prova (Max. 4000): ");
 					scanf("%d", &notab2);
 			
-					//Validar se È maior que 4000
+					//Validar se √© maior que 4000
 					if (notab2 > 4000)
 					{
-						printf("\nNota acima de 4000 inv·lida para prova 2! \n\n");	
+						printf("\nNota acima de 4000 inv√°lida para prova 2! \n\n");	
 					}
 				} while (notab2 > 4000);
 				
-				//Loop de validaÁ„o
+				//Loop de valida√ß√£o
 				do
 				{
 					//Inserir a nota da atividade em sala B1
 					printf("Digite a nota da atividade em sala do B1 (Max. 1000): ");
 					scanf("%d", &atividades_aula_b1);
 			
-					//Validar se È maior que 1000
+					//Validar se √© maior que 1000
 					if (atividades_aula_b1 > 1000)
 					{
-						printf("\nNota acima de 1000 inv·lida para atividade em sala do B1! \n\n");
+						printf("\nNota acima de 1000 inv√°lida para atividade em sala do B1! \n\n");
 					}
 				} while (atividades_aula_b1 > 1000);
 				
-				//Loop de validaÁ„o
+				//Loop de valida√ß√£o
 				do
 				{
 					//Inserir a nota da atividade em sala B2
 					printf("Digite a nota da atividade em sala do B2 (Max. 1500): ");
 					scanf("%d", &atividades_aula_b2);
 			
-					//Validar se È maior que 1500
+					//Validar se √© maior que 1500
 					if (atividades_aula_b2 > 1500)
 					{
-						printf("\nNota acima de 1500 inv·lida para atividade em sala do B2! \n\n");
+						printf("\nNota acima de 1500 inv√°lida para atividade em sala do B2! \n\n");
 					}
 				} while (atividades_aula_b2 > 1500);
 				
-				//Loop de validaÁ„o
+				//Loop de valida√ß√£o
 				do
 				{
 					//Inserir a nota da atividade transversal
 					printf("Digite a nota da atividade transversal (Max. 3500): ");
 					scanf("%d", &atividades_transversal);
 			
-					//Validar se È maior que 3500
+					//Validar se √© maior que 3500
 					if (atividades_transversal > 3500)
 					{	
-						printf("\nNota acima de 3500 inv·lida para atividade transversal! \n\n");
+						printf("\nNota acima de 3500 inv√°lida para atividade transversal! \n\n");
 					}
 				} while (atividades_transversal > 3500);
 				
-				//Loop de validaÁ„o
+				//Loop de valida√ß√£o
 				do
 				{
 					//Inserir a nota da atividade virtual
 					printf("Digite a nota da atividade virtual (Max. 3000): ");
 					scanf("%d", &atividades_virtual);
 			
-					//Validar se È maior que 3000
+					//Validar se √© maior que 3000
 					if (atividades_virtual > 3000)
 					{
-						printf("\nNota acima de 3000 inv·lida para atividade virtual! \n\n");
+						printf("\nNota acima de 3000 inv√°lida para atividade virtual! \n\n");
 					}
 				} while (atividades_virtual > 3000);
 				
 				//Calculo da nota final
 				nota_final = notab1 + notab2 + atividades_aula_b1 + atividades_aula_b2, atividades_transversal, atividades_virtual;
 				
-				//Exibir informaÁıes dos alunos
+				//Exibir informa√ß√µes dos alunos
 				printf("----------------------\n");
 				printf("Nome do aluno: %s\n", nome);
 				printf("Nota final: %d\n", nota_final);
-				printf("1o critÈrio de aprovaÁ„o: 1500 \n");
-				printf("2o critÈrio de aprovaÁ„o: 6000 \n");
+				printf("1o crit√©rio de aprova√ß√£o: 1500 \n");
+				printf("2o crit√©rio de aprova√ß√£o: 6000 \n");
 				
-				//Condicional de aprovaÁ„o
+				//Condicional de aprova√ß√£o
 				if (nota_final >= 6000)
 				{
 					//Aprovado
-					printf("SituaÁ„o final: Aprovado! \n");
+					printf("Situa√ß√£o final: Aprovado! \n");
 				}
 				else
 				{
 					if (nota_final >= 1500)
 					{
-						//RecuperaÁ„o
-						printf("SituaÁ„o final: RecuperaÁ„o! \n");	
+						//Recupera√ß√£o
+						printf("Situa√ß√£o final: Recupera√ß√£o! \n");	
 					}
 					else
 					{
 						//Reprovado
-						printf("SituaÁ„o final: Reprovado! \n");		
+						printf("Situa√ß√£o final: Reprovado! \n");		
 					}
 				}
 				
@@ -193,7 +188,7 @@ int main()
 				printf("\nTem certeza? [s/n] ");
 				scanf("%s", &resposta);
 				
-				//Codicional para finalizar ou n„o
+				//Codicional para finalizar ou n√£o
 				if (resposta == 's' || resposta == 'S')
 				{
 					printf("\nFinalizando o programa!");
@@ -207,10 +202,10 @@ int main()
 				break;		
 			}
 			
-			//Outra opÁ„o
+			//Outra op√ß√£o
 			default:
 			{
-				printf("\nOpÁ„o invalida!\n\n");
+				printf("\nOp√ß√£o invalida!\n\n");
 				
 				//Termina a escolha
 				break;	
